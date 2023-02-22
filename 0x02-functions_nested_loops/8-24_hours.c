@@ -1,25 +1,23 @@
-#include <stdio.h>
+#include "main.h"
+
 /**
- * main - is entry of program
- *
- * Return: 0, if succesful
+ * jack_bauer - Prints every minute of the day of
+ *              Jack Bauer, starting from 00:00 to 23:59.
  */
-int main(void)
+void jack_bauer(void)
 {
-	/*
-	 * prints the hexadecimal base16,using putchar only
-	 * loops through 9-0,prints them simulating char with arithemtics
-	 * loops through a-f, prints them
-	 */
-	int x;
-	char y;
+	int hour, minute;
 
-	for (x = 0 ; x < 10 ; x++)
-		putchar((x % 10) + '0');
-
-	for (y = 'a' ; y <= 'f' ; y++)
-		putchar(y);
-	putchar('\n');
-
-	return (0);
+	for (hour = 0; hour < 24; hour++)
+	{
+		for (minute = 0; minute < 60; minute++)
+		{
+			_putchar((hour / 10) + '0');
+			_putchar((hour % 10) + '0');
+			_putchar(':');
+			_putchar((minute / 10) + '0');
+			_putchar((minute % 10) + '0');
+			_putchar('\n');
+		}
+	}
 }
